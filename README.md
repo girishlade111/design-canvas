@@ -1,280 +1,76 @@
-# yft-design
-1，一款美观且功能强大的在线设计工具，具备海报设计和图片编辑功能，基于Canvas的开源版【稿定设计】。适用于多种场景，如海报生成、电商产品图制作、文章长图设计、视频/公众号封面编辑等。  
-2，适配稿定设计pdf还原，支持导入psd还原  
-3，可导出图片，svg，pdf  
-## 📞 联系我们
+# Design Canvas — Online Poster & Image Design Tool
 
-<div align="left">
+A beautiful, full-featured browser-based design editor for posters, marketing creatives, and image editing — built on Canvas. Forked and maintained from the open-source yft-design project.
 
-### 🌐 在线体验
+![Stack](https://img.shields.io/badge/Vue-3-brightgreen) ![Stack](https://img.shields.io/badge/fabric.js-6-blue) ![Stack](https://img.shields.io/badge/Vite-5-purple) ![Stack](https://img.shields.io/badge/TypeScript-5-blue)
 
-| 版本     | 链接                                               | 描述         |
-| -------- | -------------------------------------------------- | ------------ |
-| **Demo** | [https://demo.yft.design](https://demo.yft.design) | 免费体验版本 |
-| **Pro**  | [https://yft.design](https://yft.design)           | 专业完整版本 |
+## ✨ Features
 
-### 💬 联系方式
+- **Poster design** — drag-and-drop editor with layers, text, shapes, images, and backgrounds
+- **Image editing** — crop, filters, masks, blend modes, and canvas effects
+- **Import / export** — export designs as PNG, JPG, SVG, or PDF; import PSD files and restore PDF layouts (Gaoding-style design compatibility)
+- **Rich text engine** — multi-style text, fonts, spacing, alignment, text on path
+- **Templates & assets** — template gallery, background library, icon/sticker picker
+- **History & undo** — full undo/redo timeline
+- **Keyboard shortcuts** — pro-editor-style hotkeys throughout
+- **Local-first storage** — drafts persist in IndexedDB (Dexie), no account needed
 
-| 平台         | 联系方式                                   | 说明                 |
-| ------------ | ------------------------------------------ | -------------------- |
-| **微信**     | `15972699417`                              | 添加微信获取技术支持 |
-| **邮箱**     | `yft.design@163.com`                       | 商务合作与技术支持   |
-| **Telegram** | [加入群组](https://t.me/+YBqps3QqAAI4NzVl) | 技术交流与社区讨论   |
+## 🛠 Tech stack
 
-</div>
+| Layer | Technology |
+|---|---|
+| UI framework | Vue 3 + TypeScript |
+| Canvas engine | fabric.js 6 |
+| UI components | Element Plus |
+| Build tool | Vite 5 |
+| Styling | Tailwind CSS, SCSS |
+| Local storage | Dexie (IndexedDB) |
+| QR / barcode | beautify-qrcode, jsbarcode |
+| Math / utils | lodash-es, number-precision, clipper-lib, delaunator |
 
----
+## 🚀 Quick start
 
-## 🚀 开发状态
+Prerequisites: Node.js 18+ and npm.
 
-[介绍文章](https://juejin.cn/post/7238804998276087868)  
-[介绍视频](https://www.bilibili.com/video/BV1Zb421H7fT/?buvid=XY3B1253C1118CEF7B4DE80267E1AD86732A0&from_spmid=main.space.0.0&is_story_h5=false&mid=TIDtF8b2h0f7OVMypYFAZQ%3D%3D&p=1&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=56bc8446-776d-4fd6-a742-132ac702b09b&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1719707202&unique_k=Z8LQOMT&up_id=149041192)
+```bash
+# install dependencies
+npm install --legacy-peer-deps
 
-![image](https://github.com/user-attachments/assets/b6918883-2675-409e-b908-fe50151e91fa)
+# start dev server (http://localhost:5174)
+npm run dev
 
-<table rules="none" align="center">
-   <tr>
-      <td>
-         <center>
-            <img src="https://github.com/dromara/yft-design/assets/113762408/ce9d2c5b-0249-4fb3-8327-a533513e5619" width="100%"/>
-            <br/>
-            <font color="AAAAAA">psd解析</font>
-         </center>
-      </td>
-      <td>
-         <center>
-            <img src="https://github.com/dromara/yft-design/assets/113762408/8bd89208-cc9e-4b77-b976-1bce078e73bb" width="100%"/>
-            <br/>
-            <font color="AAAAAA">pdf解析</font>
-         </center>
-      </td>
-   </tr>
-</table>
-
-<table rules="none" align="center">
-   <tr>
-      <td>
-         <center>
-            <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d443519bc05f4dfbb98bbcf7df7e6bef~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1907&h=997&s=639936&e=jpg&b=f8f0ee" width="100%" />
-            <br/>
-            <font color="AAAAAA">psd解析</font>
-         </center>
-      </td>
-      <td>
-         <center>
-            <img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/59e36b4a389246a1873372e80a94e7cb~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1917&h=993&s=655084&e=png&b=fcfbfb" width="100%" />
-            <br/>
-            <font color="AAAAAA">pdf解析</font>
-         </center>
-      </td>
-   </tr>
-</table>
-
-# 🚀 项目运行
-```
-node >= 16+
-pnpm install  // 安装依赖
-pnpm dev      // debug
-pnpm build    // prod
+# production build (outputs to dist/)
+npm run build
 ```
 
-# 📖 项目结构
+The built `dist/` folder is fully static and can be served by any static host (GitHub Pages, Cloudflare Pages, nginx).
+
+## 📁 Project structure
+
 ```
-├── app                           // 静态资源
-│   ├── fabricCanvas              // FabricCanvas
-│   ├── fabricControls            // 选择器
-│   ├── fabricRuler               // 标尺
-│   ├── fabricTool                // 拖动
-│   ├── guideLines                // 辅助线
-│   ├── hoverBorders              // 预选择
-│   └── wheelScroll               // 缩放
-├── assets                        // 静态资源
-│   ├── fonts                     // 在线字体文件
-│   └── styles                    // 样式
-├── components                    // 与业务逻辑无关的通用组件
-├── configs                       // 配置文件，如：颜色，字体。
-├── hooks                         // 供多个组件（模块）使用的 hooks 方法
-├── extension                     // 自定义fabirc对象
-│   ├── controls                  // 裁剪图片controls
-│   ├── mixins                    // 裁剪图片mixins
-│   └── object                    // 自定义元素对象
-├── mocks                         // mocks 数据
-├── plugins                       // 自定义的 Vue 插件
-├── types                         // 类型定义文件
-├── store                         // Pinia store，参考：https://pinia.vuejs.org/
-├── utils                         // 通用的工具方法
-├── views                         // 业务组件目录。
-│    ├── Canvas                   // 编辑器对象
-│    └── Editor                   // 编辑器模块
-└── worker                        // web worker
+├── src/                # app source (views, components, hooks, store)
+│   ├── views/          # editor pages and panels
+│   ├── components/     # reusable UI components
+│   └── mocks/          # template / asset mock data
+├── build/              # vite plugin + optimization config
+├── public/             # static assets copied verbatim
+├── index.html          # vite entry
+├── vite.config.mts     # build config (relative base "./" — deployable to any subpath)
+├── tailwind.config.js
+└── tsconfig.json
 ```
 
-# 📚 功能列表
-### 基础功能
-- 历史记录（撤销、重做）
-- 快捷键
-- 右键菜单
-- 导入PDF(完美还原格式，不支持图片裁切导入)
-- 导入PSD(完美还原格式，支持部分特效还原，亮度，对比度，颜色覆盖)
-- 导入SVG(不支持tspan字体)
-- 导出本地文件（SVG、图片、PDF）
-### 页面编辑
-- 页面添加、删除
-- 页面顺序调整
-- 页面复制粘贴(TODO)
-- 背景设置（纯色、渐变、图片）
-- 设置画布尺寸
-- 网格线(TODO)
-- 标尺
-- 画布缩放、移动
-- 页面模板
-- 选择面板（隐藏元素、层级排序、元素命名）(TODO)
-### 元素编辑
-- 元素添加、删除
-- 元素复制粘贴
-- 元素拖拽移动
-- 元素旋转
-- 元素缩放
-- 元素多选（框选、点选）
-- 多元素组合
-- 多元素批量编辑(TODO)
-- 元素锁定(TODO)
-- 元素吸附对齐（移动和缩放）
-- 元素层级调整
-- 元素对齐到画布
-- 元素坐标、尺寸和旋转角度设置
-#### 文字
-- 文本编辑（颜色、高亮、字体、字号、加粗、斜体、下划线、删除线、对齐方式、项目符号、缩进、清除格式）
-- 行高
-- 字间距
-- 段间距
-- 填充色
-- 阴影
-- 透明度
-#### 图片
-- 滤镜
-- 着色（蒙版）
-- 翻转
-- 边框
-- 阴影
-- 裁切
-#### 形状
-- 填充色
-- 边框
-- 阴影
-- 透明度
-- 翻转
-- 编辑文字
-#### 线条
-- 颜色
-- 宽度
-- 样式
+## ⚙️ Notes
 
-## 联系作者
-wechat: 15972699417  
-email:  yft.design@163.com
+- Dev-server proxy (`/api`, `/static`, `/yft-static` in `vite.config.mts`) points at a local backend (`127.0.0.1:8789`); the production build works without it — all editor features run client-side.
+- Build target is `es2015` with terser minification (console statements stripped in production).
 
+## 🌐 Live demo
 
-## License
-Licensed under the MIT License.
+Deployed static build is linked in the repo homepage.
 
-## 管理员
-<!-- readme: collaborators -start -->
-<table>
-<tr>
-   <td align="center">
-        <a href="https://github.com/more-strive">
-            <img src="https://avatars.githubusercontent.com/u/113762408?v=4" width="80;" alt="more-strive"/>
-            <br />
-            <sub><b>more-strive(作者)</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/Qiu-Jun">
-            <img src="https://avatars.githubusercontent.com/u/24954362?v=4" width="80;" alt="Qiu-Jun"/>
-            <br />
-            <sub><b>Qiu-Jun</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/zjc2233">
-            <img src="https://avatars.githubusercontent.com/u/43945226?v=4" width="80;" alt="zjc2233"/>
-            <br />
-            <sub><b>zjc2233</b></sub>
-        </a>
-    </td>
-    
-</tr>
-</table>
-<!-- readme: collaborators -end -->
+## 🙏 Credits
 
-## 贡献者
-<!-- readme: collaborators,contributors -start -->
-<table>
-<tr>
-   <td align="center">
-        <a href="https://github.com/more-strive">
-            <img src="https://avatars.githubusercontent.com/u/113762408?v=4" width="80;" alt="more-strive"/>
-            <br />
-            <sub><b>more-strive(作者)</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/Qiu-Jun">
-            <img src="https://avatars.githubusercontent.com/u/24954362?v=4" width="80;" alt="Qiu-Jun"/>
-            <br />
-            <sub><b>Qiu-Jun</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/zjc2233">
-            <img src="https://avatars.githubusercontent.com/u/43945226?v=4" width="80;" alt="zjc2233"/>
-            <br />
-            <sub><b>zjc2233</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/wohuweixiya">
-            <img src="https://avatars.githubusercontent.com/u/86701050?v=4" width="80;" alt="wohuweixiya"/>
-            <br />
-            <sub><b>wohuweixiya</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/zdw1011781461">
-            <img src="https://avatars.githubusercontent.com/u/42407561?v=4" width="80;" alt="zdw1011781461"/>
-            <br />
-            <sub><b>zdw1011781461</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/mjhcc365">
-            <img src="https://avatars.githubusercontent.com/u/44367932?v=4" width="80;" alt="mjhcc365"/>
-            <br />
-            <sub><b>mjhcc365</b></sub>
-        </a>
-    </td>
-<tr>
-    <td align="center">
-        <a href="https://github.com/ieleg">
-            <img src="https://avatars.githubusercontent.com/u/52823905?v=4" width="80;" alt="ieleg"/>
-            <br />
-            <sub><b>ieleg</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/qq404388339">
-            <img src="https://avatars.githubusercontent.com/u/34053528?v=4" width="80;" alt="qq404388339"/>
-            <br />
-            <sub><b>qq404388339</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/sledgehuang">
-            <img src="https://avatars.githubusercontent.com/u/95006723?v=4" width="80;" alt="sledgehuang"/>
-            <br />
-            <sub><b>sledgehuang</b></sub>
-        </a>
-    </td></tr>
-</table>
-<!-- readme: collaborators,contributors -end -->
+Based on the open-source [yft-design](https://github.com/dromara/yft-design) project by the Dromara community.
+
+**Built by [Girish Lade](https://ladestack.in)** — part of the [LadeStack](https://ladestack.in) free-tools ecosystem.
